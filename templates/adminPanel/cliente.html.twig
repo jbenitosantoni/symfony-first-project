@@ -1,0 +1,15 @@
+{% extends'adminPanel/base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="../../css/dashboard.css">
+{% endblock %}
+{% block h2Title %}
+    Cliente {{ cliente.instagram }}
+{% endblock %}
+{% block activeInicio %}active{% endblock %}
+{% block single %}
+<a href="{{ path('pedidosCliente', {'id': cliente.id})}}"> <p>Ver pedidos</p></a>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="../../js/dashboard.js"></script>
+{% endblock %}

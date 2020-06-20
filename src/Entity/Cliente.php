@@ -6,9 +6,11 @@ use App\Repository\ClienteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ClienteRepository::class)
+ *)
  */
 class Cliente
 {
@@ -40,7 +42,7 @@ class Cliente
     private $Email;
 
     /**
-     * @ORM\Column(type="string", length=70)
+     * @ORM\Column(type="string", length=70, unique=true)
      */
     private $Instagram;
 

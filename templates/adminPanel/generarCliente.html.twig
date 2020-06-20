@@ -1,0 +1,37 @@
+{% extends'adminPanel/base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="../css/dashboard.css">
+{% endblock %}
+{% block h2Title %}
+        Nuevo Cliente
+{% endblock %}
+{% block activeInicio %}active{% endblock %}
+{% block single %}
+    <form method="post" action="{{ path('nuevoCliente') }}">
+        <label for="nombre"><b>Nombre:</b></label>
+        <div class="col-sm-4">
+            <input class="form-control" type="text" name="nombre" id="nombre" required>
+        </div>
+        <label for="apellidos"><b>Apellidos:</b></label>
+        <div class="col-sm-4">
+            <input class="form-control" type="text" name="apellidos" id="apellidos" required>
+        </div>
+        <label for="direccion"><b>Direccion:</b></label>
+        <div class="col-sm-4">
+            <textarea rows="4" cols="50" id="direccion" name="direccion"></textarea>
+        </div>
+        <label for="email"><b>Email:</b></label>
+        <div class="col-sm-4">
+            <input class="form-control" type="email" name="email" id="email" required>
+        </div>
+        <label for="instagram"><b>Instagram:</b></label>
+        <div class="col-sm-4">
+            <input class="form-control" placeholder="@Instagram" type="text" name="instagram" id="instagram" pattern="^@.*$" required>
+        </div>
+        <br><button type="submit" class="btn btn-primary mb-2">Crear</button>
+    </form>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="../js/dashboard.js"></script>
+{% endblock %}

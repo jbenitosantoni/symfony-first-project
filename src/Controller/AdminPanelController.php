@@ -131,12 +131,66 @@ class AdminPanelController extends AbstractController
         $pedidos = $repositoryPedidos->getPedidosCliente($id);
         if(count($pedidos) == 0) {
             $url = $this->generateUrl('formPedido', array('id'=> $id));
-            return new Response("Este cliente no tiene pedidos para volver <a href='$url'>click aqui para generar pedido</a>");
+            return new Response("Este cliente no tiene pedidos <a href='$url'>click aqui para generar pedido</a>");
         } else {
 
         return $this->render('adminPanel/pedidosCliente.html.twig', [
             'pedidos' => $pedidos
         ]);
+        }
+    }
+
+    /**
+     * @Route("adminPanel/buscar", name="buscarInstagram")
+     * @param Request $request
+     * @param ClienteRepository $repository
+     * @return Response
+     */
+    public function buscarInstagram(Request $request, ClienteRepository $repository) {
+        if ($request->isMethod('post')) {
+            $ig = $request->get('instagram');
+            $cliente = $repository->buscarPorInstagram($ig);
+            if ($cliente == null) {
+                $url = $this->generateUrl('indexPanelAdmin');
+                return new Response("El cliente con Instagram $ig no existe, ¿has puesto la @? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
+            }
+            return $this->render('adminPanel/cliente.html.twig', [
+                'cliente' => $cliente
+            ]);
+        }
+        else {
+            $url = $this->generateUrl('indexPanelAdmin');
+            return new Response("Que haces aqui?? UTILIZA LA BARRA DE NAVEGACION PARA BUSCAR <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
+            }
+    }
+    /**
+     * @Route("adminPanel/generarCliente", name="formNuevoCliente")
+     */
+    public function formGenerarCliente() {
+        return $this->render('adminPanel/generarCliente.html.twig');
+    }
+    /**
+     * @Route("adminPanel/generarCliente/new", name="nuevoCliente")
+     */
+    public function generarCliente(Request $request, ClienteRepository $repository) {
+        if ($request->isMethod('post')) {
+            $nombre = $request->get('nombre');
+            $apellidos = $request->get('apellidos');
+            $direccion = $request->get('direccion');
+            $email = $request->get('email');
+            $instagram = $request->get('instagram');
+            if (!preg_match('/^@.*$/', $instagram)) {
+                $url = $this->generateUrl('formNuevoCliente');
+                Return new Response('El instagram debe empezar con @ para volver a crear el usuario click <a href="$url">aqui</a>');
+            } elseif (!preg_match('/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/', $email)){
+                Return new Response('El formato del email es incorrecto para volver a crear el usuario click <a href="$url">aqui</a>');
+            } else {
+            $cliente = $repository->nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram);
+            return $this->mostrarTodosClientes($repository);
+        }
+    } else {
+            $url = $this->generateUrl('indexPanelAdmin');
+            return new Response("Que haces aqui?? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
         }
     }
 }
