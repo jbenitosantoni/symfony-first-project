@@ -11,31 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/117591b1-0a60-4e1f-8346-2c0360273c9f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/117591b1-0a60-4e1f-8346-2c0360273c9f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_1.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_10.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_2.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_3.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_4.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_5.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_6.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_7.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_8.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_9.ibt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/binlog.000003" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/binlog.000003" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/dispenseeds/factura.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/dispenseeds/factura.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/dispenseeds/pedidos.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/dispenseeds/pedidos.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_buffer_pool" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/binlog.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_logfile0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/ibtmp1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/mysql.ibd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/pedido.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/pedido.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/pedidosCliente.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/pedidosCliente.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Cliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cliente.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,6 +184,7 @@
       <workItem from="1592584277131" duration="1943000" />
       <workItem from="1592586246350" duration="10138000" />
       <workItem from="1592604978770" duration="30695000" />
+      <workItem from="1592685072734" duration="320000" />
     </task>
     <servers />
   </component>
@@ -273,11 +259,11 @@
       <screen x="1680" y="-66" width="2560" height="1351" />
     </state>
     <state x="2847" y="493" width="341" height="249" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592682938517" />
-    <state x="2787" y="380" width="1081" height="682" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1592681800160">
+    <state x="2787" y="380" width="1081" height="682" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1592685279590">
       <screen x="1680" y="-66" width="2560" height="1351" />
     </state>
     <state x="726" y="342" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1680.965@0.23.1680.965" timestamp="1592644484160" />
-    <state x="2787" y="380" width="1081" height="682" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592681800160" />
+    <state x="2787" y="380" width="1081" height="682" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592685279590" />
     <state x="2786" y="384" key="refactoring.ChangeSignatureDialog" timestamp="1592591387624">
       <screen x="1680" y="-66" width="2560" height="1351" />
     </state>

@@ -7,10 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ClienteRepository::class)
- * @UniqueEntity(fields={"email"}, message="Email {{ value }} already exists")
+ * @UniqueEntity(fields={"Email"}, message="Email {{ value }} already exists")
  */
 class Cliente
 {
@@ -38,6 +39,7 @@ class Cliente
 
     /**
      * @ORM\Column(type="string", length=70)
+     * @Assert\Email
      */
     private $Email;
 
