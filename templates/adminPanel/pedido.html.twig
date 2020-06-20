@@ -10,7 +10,8 @@
     <p><b>Nombre y Apellidos:</b> {{ pedido.Nombre }} {{ pedido.Apellidos }}</p>
     <p><b>Instagram: </b>{{ pedido.Instagram }}</p>
     <p><b>Email:</b> {{ pedido.Email }}</p>
-    <p><b>Direccion: </b> {{ pedido.Direccion }}</p>
+    <p><b>Direccion: </b></p>
+    <textarea rows="4" cols="50" readonly>{{ pedido.Direccion }}</textarea>
     <p><b>Fecha Creacion: </b> {{ pedido.FechaCreacion }}</p>
     <p><b>Fecha Recibido: </b>{{ pedido.FechaRecibido }}</p>
     <p><b>Precio Final: </b>{{ pedido.PrecioFinal}} ARS</p>

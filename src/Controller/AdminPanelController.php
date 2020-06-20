@@ -114,7 +114,9 @@ class AdminPanelController extends AbstractController
             $idCliente = $request->get('idCliente');
             if(!preg_match("/^\d{0,8}(\.\d{1,4})?$/",$precio)) {
                 return new Response("El precio debe ser del formato xx.xx, solo puede tener dos decimales");
-            } else {
+            } elseif ($precio == 0){
+                return new Response("El precio no puede ser 0");
+            }else {
             $cliente = $repositoryCliente->getCliente($idCliente);
             $repositoryPedidos->generarPedido($articulos, $precio, $cliente);
             return $this->redirect($this->generateUrl('clientes'));
@@ -125,7 +127,7 @@ class AdminPanelController extends AbstractController
         }
     }
     /**
-     * @Route("pedidos/cliente/{id}", name="pedidosCliente")
+     * @Route("admin/pedidos/cliente/{id}", name="pedidosCliente")
      */
     public function pedidosCliente($id, PedidosRepository $repositoryPedidos) {
         $pedidos = $repositoryPedidos->getPedidosCliente($id);
@@ -141,7 +143,7 @@ class AdminPanelController extends AbstractController
     }
 
     /**
-     * @Route("adminPanel/buscar", name="buscarInstagram")
+     * @Route("admin/buscar", name="buscarInstagram")
      * @param Request $request
      * @param ClienteRepository $repository
      * @return Response
@@ -164,13 +166,13 @@ class AdminPanelController extends AbstractController
             }
     }
     /**
-     * @Route("adminPanel/generarCliente", name="formNuevoCliente")
+     * @Route("admin/generarCliente", name="formNuevoCliente")
      */
     public function formGenerarCliente() {
         return $this->render('adminPanel/generarCliente.html.twig');
     }
     /**
-     * @Route("adminPanel/generarCliente/new", name="nuevoCliente")
+     * @Route("admin/generarCliente/new", name="nuevoCliente")
      */
     public function generarCliente(Request $request, ClienteRepository $repository) {
         if ($request->isMethod('post')) {

@@ -10,7 +10,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ClienteRepository::class)
- *)
+ * @UniqueEntity(fields={"email"}, message="Email {{ value }} already exists")
  */
 class Cliente
 {
