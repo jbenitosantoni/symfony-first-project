@@ -1,0 +1,37 @@
+{%  extends 'adminPanel/base.html.twig' %}
+{% block title %}Admin - DispenSeeds{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="../css/dashboard.css">
+{% endblock %}
+{% block linkNuevo %}  {% endblock %}
+{% block h2Title %}
+    Pedidos Sin Enviar
+{% endblock %}
+{% block headTable %}
+    <tr>
+        <th>#</th>
+        <th>Fecha de Creacion</th>
+        <th>Nombre y Apellidos</th>
+        <th>Instagram</th>
+        <th>Email</th>
+        <th>Precio Final</th>
+        <th>Ver</th>
+    </tr>
+{% endblock %}
+{% block bodyTable %}
+    {% for pedido in pedidos %}
+        <tr>
+            <td>{{ pedido.id }}</td>
+            <td>{{ pedido.FechaCreacion }}</td>
+            <td>{{ pedido.Nombre }} {{ pedido.Apellidos }}</td>
+            <td>{{ pedido.Instagram }}</td>
+            <td>{{ pedido.Email }}</td>
+            <td>{{ pedido.PrecioFinal }} ARS</td>
+            <td><a href="/admin/pedido/{{ pedido.id }}"><button type="button" class="btn btn-outline-primary">Ver</button></a></td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="../js/dashboard.js"></script>
+{% endblock %}

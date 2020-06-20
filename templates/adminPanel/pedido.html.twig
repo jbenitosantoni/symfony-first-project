@@ -1,0 +1,51 @@
+{% extends'adminPanel/base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="../../css/dashboard.css">
+{% endblock %}
+{% block h2Title %}
+    Pedido {{ pedido.id }}
+{% endblock %}
+{% block single %}
+    <p><b>Nombre y Apellidos:</b> {{ pedido.Nombre }} {{ pedido.Apellidos }}</p>
+    <p><b>Instagram: </b>{{ pedido.Instagram }}</p>
+    <p><b>Email:</b> {{ pedido.Email }}</p>
+    <p><b>Direccion: </b> {{ pedido.Direccion }}</p>
+    <p><b>Fecha Creacion: </b> {{ pedido.FechaCreacion }}</p>
+    <p><b>Fecha Recibido: </b>{{ pedido.FechaRecibido }}</p>
+    <p><b>Precio Final: </b>{{ pedido.PrecioFinal}} ARS</p>
+    <p><b>Articulos: </b></p>
+    <textarea rows="4" cols="50" readonly>{{ pedido.Articulos }}</textarea>
+    <form method="post" action="{{ path('modifyOrder') }}">
+        <label for="tracking"><b>Tracking:</b></label>
+        <div class="col-sm-3">
+        <input class="form-control" type="text" placeholder="RF203286223ES" value="{{ pedido.Tracking }}" id="tracking" name="tracking">
+        </div>
+        <label for="enviado"><b>Enviado:</b></label>
+        <div class="col-sm-2">
+            <select class="form-control" id="enviado" name="enviado">
+                <option value="0" {% if pedido.Enviado == 0%} selected {% endif %}>No</option>
+                <option value="1"{% if pedido.Enviado == 1%} selected {% endif %}>Si</option>
+            </select>
+        </div>
+        <label for="recibido"><b>Recibido:</b></label>
+        <div class="col-sm-2">
+            <select class="form-control" id="recibido" name="recibido">
+                <option value="0" {% if pedido.Recibido == 0%} selected {% endif %}>No</option>
+                <option value="1" {% if pedido.Recibido == 1%} selected {% endif %}>Si</option>
+            </select>
+        </div>
+        <input type="hidden" name="id" value="{{ pedido.id }}">
+        <label for="devuelto"><b>Devuelto:</b></label>
+        <div class="col-sm-2">
+            <select class="form-control" id="devuelto" name="devuelto">
+                <option value="0" {% if pedido.Devuelto == 0%} selected {% endif %}>No</option>
+                <option value="1" {% if pedido.Devuelto == 1%} selected {% endif %}>Si</option>
+            </select>
+        </div><br>
+        <button type="submit" class="btn btn-primary mb-2">Modificar</button>
+    </form>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="../../js/dashboard.js"></script>
+{% endblock %}

@@ -1,0 +1,78 @@
+{%  extends 'base.html.twig' %}
+{% block title %}{% endblock %}
+{%  block stylesheets %}
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Dispenseeds</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <form class="w-100 form-control form-control-dark">
+        <input class="w-100" type="text" placeholder="Buscar Cliente Por Instagram" aria-label="Search">
+        <input type="submit" style="position: absolute; left: -9999px"/>
+    </form>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="{{ path('app_logout') }}">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('indexPanelAdmin') }}">
+                            <span data-feather="home"></span>
+                            Inicio <span class="sr-only"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="shopping-cart"></span>
+                            Pedidos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file"></span>
+                            Facturas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="users"></span>
+                            Customers
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4"><br>
+            <h2>{% block h2Title%} {% endblock%} <a href="{% block linkNuevo %}{% endblock %}"><button type="button" class="btn btn-primary float-right">Nuevo</button></a></h2>
+            {% block single %}{% endblock %}
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    {% block headTable %}
+                    {% endblock %}
+                    </thead>
+                    <tbody>
+                    {% block bodyTable %}
+                    {% endblock %}
+                    </tbody>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+{% endblock %}
