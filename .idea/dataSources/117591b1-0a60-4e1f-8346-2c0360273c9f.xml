@@ -965,7 +965,7 @@
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="299" parent="286" name="cliente_email_uindex">
+    <index id="299" parent="286" name="UNIQ_F41C9B25E7927C74">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
@@ -980,9 +980,9 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="302" parent="286" name="cliente_email_uindex">
+    <key id="302" parent="286" name="UNIQ_F41C9B25E7927C74">
       <ColNames>email</ColNames>
-      <UnderlyingIndexName>cliente_email_uindex</UnderlyingIndexName>
+      <UnderlyingIndexName>UNIQ_F41C9B25E7927C74</UnderlyingIndexName>
     </key>
     <key id="303" parent="286" name="UNIQ_F41C9B2584A87EC3">
       <ColNames>instagram</ColNames>

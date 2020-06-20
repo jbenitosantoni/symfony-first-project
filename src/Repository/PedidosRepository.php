@@ -2,18 +2,15 @@
 
 namespace App\Repository;
 
-use App\Entity\Cliente;
 use App\Entity\Factura;
 use App\Entity\Pedidos;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\DBAL\DBALException;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Validator\Constraints\DateTime;
+
 
 /**
  * @method Pedidos|null find($id, $lockMode = null, $lockVersion = null)

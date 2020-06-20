@@ -3,15 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\PedidosRepository;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\DBAL\DBALException;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping as ORM;
-use http\Env\Response;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
  * @ORM\Entity(repositoryClass=PedidosRepository::class)
+ * @UniqueEntity(fields="Tracking", message="Introduce un Tracking que no haya sido usado antes")
  */
 class Pedidos
 {
@@ -24,16 +23,19 @@ class Pedidos
 
     /**
      * @ORM\Column(type="decimal", precision=10, scale=2)
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $PrecioFinal;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $Articulos;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $Enviado;
 
@@ -44,11 +46,13 @@ class Pedidos
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $Devuelto;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $Recibido;
 

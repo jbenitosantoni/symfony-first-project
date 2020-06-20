@@ -11,7 +11,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ClienteRepository::class)
- * @UniqueEntity(fields={"Email"}, message="Email {{ value }} already exists")
+ * @UniqueEntity(fields="Email", message="Introduce un Email que no haya sido usado antes")
+ * @UniqueEntity(fields="Instagram", message="Introduce un Instagtram que no haya sido usado antes")
  */
 class Cliente
 {
@@ -24,27 +25,31 @@ class Cliente
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank()
      */
     private $Nombre;
 
     /**
      * @ORM\Column(type="string", length=150)
+     * @Assert\NotBlank()
      */
     private $Apellidos;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()
      */
     private $Direccion;
 
     /**
-     * @ORM\Column(type="string", length=70)
-     * @Assert\Email
+     * @ORM\Column(type="string", length=70, unique=true)
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $Email;
 
     /**
      * @ORM\Column(type="string", length=70, unique=true)
+     * @Assert\NotBlank(message="This value cannot be empty!")
      */
     private $Instagram;
 
