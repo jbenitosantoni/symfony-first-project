@@ -1,0 +1,39 @@
+{%  extends 'adminPanel/base.html.twig' %}
+{% block title %}Clientes - DispenSeeds{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="../css/dashboard.css">
+{% endblock %}
+{% block activeCustomers %}active{% endblock %}
+
+{% block h2Title %}
+    Clientes
+{% endblock %}
+{% block botonNuevo %}
+{% endblock %}
+{% block headTable %}
+    <tr>
+        <th>#</th>
+        <th>Nombre y Apellidos</th>
+        <th>Instagram</th>
+        <th>Email</th>
+        <th>Ver Pedidos</th>
+        <th>Crear Pedido</th>
+    </tr>
+{% endblock %}
+{% block bodyTable %}
+    {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.Nombre }} {{ cliente.Apellidos }}</td>
+            <td>{{ cliente.Instagram }}</td>
+            <td>{{ cliente.Email }}</td>
+            <td><a href="{{ path('pedidosCliente', {'id': cliente.id})}}"><button type="button" class="btn btn-outline-primary">Ver Pedidos</button></a></td>
+            <td><a href="{{ path('formPedido', {'id': cliente.id})}}"><button type="button" class="btn btn-outline-primary">Generar Pedido</button></a></td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="../js/dashboard.js"></script>
+{% endblock %}

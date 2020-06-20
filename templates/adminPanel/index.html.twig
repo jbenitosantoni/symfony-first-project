@@ -10,7 +10,7 @@
 {% block headTable %}
     <tr>
         <th>#</th>
-        <th>Fecha de Creacion</th>
+        <th>Fecha de Pago</th>
         <th>Nombre y Apellidos</th>
         <th>Instagram</th>
         <th>Email</th>
@@ -18,11 +18,14 @@
         <th>Ver</th>
     </tr>
 {% endblock %}
+{% block activeInicio %}
+active
+{% endblock %}
 {% block bodyTable %}
     {% for pedido in pedidos %}
         <tr>
             <td>{{ pedido.id }}</td>
-            <td>{{ pedido.FechaCreacion }}</td>
+            <td>{{ pedido.FechaPago }}</td>
             <td>{{ pedido.Nombre }} {{ pedido.Apellidos }}</td>
             <td>{{ pedido.Instagram }}</td>
             <td>{{ pedido.Email }}</td>

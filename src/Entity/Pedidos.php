@@ -73,6 +73,16 @@ class Pedidos
      */
     private $factura;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $FechaEnviado;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $FechaDevuelto;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -199,6 +209,30 @@ class Pedidos
         if ($factura->getIdPedido() !== $this) {
             $factura->setIdPedido($this);
         }
+
+        return $this;
+    }
+
+    public function getFechaEnviado(): ?\DateTimeInterface
+    {
+        return $this->FechaEnviado;
+    }
+
+    public function setFechaEnviado(?\DateTimeInterface $FechaEnviado): self
+    {
+        $this->FechaEnviado = $FechaEnviado;
+
+        return $this;
+    }
+
+    public function getFechaDevuelto(): ?\DateTimeInterface
+    {
+        return $this->FechaDevuelto;
+    }
+
+    public function setFechaDevuelto(?\DateTimeInterface $FechaDevuelto): self
+    {
+        $this->FechaDevuelto = $FechaDevuelto;
 
         return $this;
     }

@@ -1,0 +1,27 @@
+{% extends'adminPanel/base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="../../../css/dashboard.css">
+{% endblock %}
+{% block h2Title %}
+    Generar Pedido
+{% endblock %}
+{% block activeInicio %}active{% endblock %}
+{% block single %}
+    <form method="post" action="{{ path('generarPedido') }}">
+        <label for="articulos"><b>Articulos:</b></label>
+        <div>
+            <textarea rows="4" cols="50" id="articulos" name="articulos"></textarea>
+        </div>
+        <label for="precio"><b>Precio Final (ARG):</b></label>
+        <div>
+            <input type="number" step="0.01" value="0.00" placeholder="0.00" name="precio" id="precio" pattern="^\d{0,8}(\.\d{1,4})?$">
+        </div>
+        <input type="hidden" name="idCliente" value="{{ idCliente }}">
+        <br>
+        <button type="submit" class="btn btn-primary mb-2">Crear</button>
+    </form>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="../../../js/dashboard.js"></script>
+{% endblock %}

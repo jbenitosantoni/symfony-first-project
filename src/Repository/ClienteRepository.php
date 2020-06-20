@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Cliente;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,6 +20,16 @@ class ClienteRepository extends ServiceEntityRepository
         parent::__construct($registry, Cliente::class);
     }
 
+    public function getAllClientes() {
+        return $this->createQueryBuilder('cliente')->select('cliente.id', 'cliente.Nombre', 'cliente.Apellidos', 'cliente.Direccion', 'cliente.Email', 'cliente.Instagram')->orderBy('cliente.id')->getQuery()->getResult();
+    }
+
+    public function getCliente($id) {
+        try {
+            return $this->createQueryBuilder('cliente')->where("cliente.id = $id")->getQuery()->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+        }
+    }
     // /**
     //  * @return Cliente[] Returns an array of Cliente objects
     //  */

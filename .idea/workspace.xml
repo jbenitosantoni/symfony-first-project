@@ -11,54 +11,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/phpunit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/cache.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/debug.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/monolog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/mailer.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/notifier.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/deprecations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/monolog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/prod/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/routing.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/monolog.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/twig.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/validator.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/validator.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/framework.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/translations/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/117591b1-0a60-4e1f-8346-2c0360273c9f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/117591b1-0a60-4e1f-8346-2c0360273c9f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/binlog.000003" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/binlog.000003" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/dispenseeds/cliente.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/dispenseeds/cliente.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/dispenseeds/doctrine_migration_versions.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/dispenseeds/doctrine_migration_versions.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/dispenseeds/factura.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/dispenseeds/factura.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/dispenseeds/pedidos.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/dispenseeds/pedidos.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/mysql.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pedidos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PedidosRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PedidosRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminPanel/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminPanel/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminPanel/pedido.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/pedido.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +193,7 @@
       <updated>1592584275659</updated>
       <workItem from="1592584277131" duration="1943000" />
       <workItem from="1592586246350" duration="10138000" />
-      <workItem from="1592604978770" duration="10520000" />
+      <workItem from="1592604978770" duration="23824000" />
     </task>
     <servers />
   </component>
@@ -274,9 +246,10 @@
     </state>
     <state width="1126" height="254" key="GridCell.Tab.0.right/0.23.1680.965@0.23.1680.965" timestamp="1592644719209" />
     <state width="1504" height="382" key="GridCell.Tab.0.right/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592586059882" />
-    <state x="2631" y="326" key="NewPhpClassDialog" timestamp="1592588213385">
-      <screen x="1680" y="-66" width="2560" height="1351" />
+    <state x="624" y="303" key="NewPhpClassDialog" timestamp="1592664742399">
+      <screen x="0" y="23" width="1680" height="965" />
     </state>
+    <state x="624" y="303" key="NewPhpClassDialog/0.23.1680.965@0.23.1680.965" timestamp="1592664742399" />
     <state x="2631" y="326" key="NewPhpClassDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592588213385" />
     <state x="603" y="247" key="SettingsEditor" timestamp="1592605050718">
       <screen x="0" y="23" width="1680" height="965" />
@@ -300,5 +273,9 @@
       <screen x="1680" y="-66" width="2560" height="1351" />
     </state>
     <state x="2786" y="384" key="refactoring.ChangeSignatureDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592591387624" />
+    <state x="505" y="235" width="670" height="676" key="search.everywhere.popup" timestamp="1592666463804">
+      <screen x="0" y="23" width="1680" height="965" />
+    </state>
+    <state x="505" y="235" width="670" height="676" key="search.everywhere.popup/0.23.1680.965@0.23.1680.965" timestamp="1592666463804" />
   </component>
 </project>
