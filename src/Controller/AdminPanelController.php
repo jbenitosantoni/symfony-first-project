@@ -149,21 +149,15 @@ class AdminPanelController extends AbstractController
      * @return Response
      */
     public function buscarInstagram(Request $request, ClienteRepository $repository) {
-        if ($request->isMethod('post')) {
-            $ig = $request->get('instagram');
-            $cliente = $repository->buscarPorInstagram($ig);
+        $instagram = dump($request->query->get('instagram'));
+            $cliente = $repository->buscarPorInstagram($instagram);
             if ($cliente == null) {
                 $url = $this->generateUrl('indexPanelAdmin');
-                return new Response("El cliente con Instagram $ig no existe, ¿has puesto la @? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
+                return new Response("El cliente con Instagram $instagram no existe, ¿has puesto la @? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
             }
             return $this->render('adminPanel/cliente.html.twig', [
                 'cliente' => $cliente
             ]);
-        }
-        else {
-            $url = $this->generateUrl('indexPanelAdmin');
-            return new Response("Que haces aqui?? UTILIZA LA BARRA DE NAVEGACION PARA BUSCAR <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
-            }
     }
     /**
      * @Route("admin/generarCliente", name="formNuevoCliente")
