@@ -109,6 +109,7 @@ class AdminPanelController extends AbstractController
      */
     public function generarPedido(Request $request, PedidosRepository $repositoryPedidos, ClienteRepository $repositoryCliente) {
         if ($request->isMethod('post')) {
+            $submittedToken = $request->request->get('token');
             $articulos = $request->get('articulos');
             $precio = $request->get('precio');
             $idCliente = $request->get('idCliente');
@@ -117,9 +118,11 @@ class AdminPanelController extends AbstractController
             } elseif ($precio == 0){
                 return new Response("El precio no puede ser 0");
             }else {
+                if ($this->isCsrfTokenValid('delete-item', $submittedToken)) {
             $cliente = $repositoryCliente->getCliente($idCliente);
             $repositoryPedidos->generarPedido($articulos, $precio, $cliente);
             return $this->redirect($this->generateUrl('clientes'));
+                }
             }
         } else {
             $url = $this->generateUrl('indexPanelAdmin');
@@ -170,28 +173,31 @@ class AdminPanelController extends AbstractController
      */
     public function generarCliente(Request $request, ClienteRepository $repository) {
         if ($request->isMethod('post')) {
+            $submittedToken = $request->request->get('token');
             $nombre = $request->get('nombre');
             $apellidos = $request->get('apellidos');
             $direccion = $request->get('direccion');
             $email = $request->get('email');
             $instagram = $request->get('instagram');
-            if (!preg_match('/^@.*$/', $instagram)) {
-                $url = $this->generateUrl('formNuevoCliente');
-                Return new Response('El instagram debe empezar con @ para volver a crear el usuario click <a href="$url">aqui</a>');
-            } elseif (!preg_match('/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/', $email)){
-                Return new Response('El formato del email es incorrecto para volver a crear el usuario click <a href="$url">aqui</a>');
-            } else {
-                if ($repository->validateEmail($email) != null && $repository->validateInstagram($instagram) != null){
-            $cliente = $repository->nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram);
-            return $this->mostrarTodosClientes($repository);
-                } else {
+            if ($this->isCsrfTokenValid('delete-item', $submittedToken)) {
+                if (!preg_match('/^@.*$/', $instagram)) {
                     $url = $this->generateUrl('formNuevoCliente');
-                    return new Response("El email o el instagram ya existen click <a href='$url'>aquí</a> para volver ");
+                    Return new Response('El instagram debe empezar con @ para volver a crear el usuario click <a href="$url">aqui</a>');
+                } elseif (!preg_match('/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/', $email)){
+                    Return new Response('El formato del email es incorrecto para volver a crear el usuario click <a href="$url">aqui</a>');
+                } else {
+                    if ($repository->validateEmail($email) == null && $repository->validateInstagram($instagram) == null){
+                        $repository->nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram);
+                        return $this->mostrarTodosClientes($repository);
+                    } else {
+                        $url = $this->generateUrl('formNuevoCliente');
+                        return new Response("El email o el instagram ya existen click <a href='$url'>aquí</a> para volver ");
+                    }
                 }
-        }
-    } else {
-            $url = $this->generateUrl('indexPanelAdmin');
-            return new Response("Que haces aqui?? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
+            } else {
+                $url = $this->generateUrl('indexPanelAdmin');
+                return new Response("Que haces aqui?? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
+            }
         }
     }
 }

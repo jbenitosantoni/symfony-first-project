@@ -28,6 +28,7 @@
         <div class="col-sm-4">
             <input class="form-control" placeholder="@Instagram" type="text" name="instagram" id="instagram" pattern="^@.*$" required>
         </div>
+        <input type="hidden" name="token" value="{{ csrf_token('delete-item') }}"/>
         <br><button type="submit" class="btn btn-primary mb-2">Crear</button>
     </form>
 {% endblock %}

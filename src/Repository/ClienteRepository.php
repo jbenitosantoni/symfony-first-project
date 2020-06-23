@@ -8,6 +8,7 @@ use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @method Cliente|null find($id, $lockMode = null, $lockVersion = null)
@@ -63,13 +64,13 @@ class ClienteRepository extends ServiceEntityRepository
 
     public function validateEmail($email)  {
         try {
-            return $this->createQueryBuilder('cliente')->select('cliente.Email')->where("cliente.Email = $email")->getQuery()->getOneOrNullResult();
+            return $this->createQueryBuilder('cliente')->select('cliente.Email')->where("cliente.Email = :email")->setParameter('email', $email)->getQuery()->getOneOrNullResult();
         } catch (NonUniqueResultException $e) {
         }
     }
     public function validateInstagram($instagram) {
         try {
-            return $this->createQueryBuilder('cliente')->select('cliente.Instagram')->where("cliente.Instagram = $instagram")->getQuery()->getOneOrNullResult();
+            return $this->createQueryBuilder('cliente')->select('cliente.Instagram')->where('cliente.Instagram = :instagram')->setParameter('instagram', $instagram)->getQuery()->getOneOrNullResult();
         } catch (NonUniqueResultException $e) {
         }
     }

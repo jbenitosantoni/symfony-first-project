@@ -18,6 +18,7 @@
         </div>
         <input type="hidden" name="idCliente" value="{{ idCliente }}">
         <br>
+        <input type="hidden" name="token" value="{{ csrf_token('delete-item') }}"/>
         <button type="submit" class="btn btn-primary mb-2">Crear</button>
     </form>
 {% endblock %}

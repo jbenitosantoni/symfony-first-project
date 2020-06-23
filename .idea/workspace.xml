@@ -12,10 +12,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/binlog.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_buffer_pool" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/mysql.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminPanel/generarCliente.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/generarCliente.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminPanel/generarPedido.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/generarPedido.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +193,8 @@
       <workItem from="1592857123700" duration="599000" />
       <workItem from="1592858277746" duration="423000" />
       <workItem from="1592897359106" duration="192000" />
-      <workItem from="1592902609550" duration="2245000" />
+      <workItem from="1592902609550" duration="2803000" />
+      <workItem from="1592918340630" duration="2634000" />
     </task>
     <servers />
   </component>
@@ -259,10 +269,11 @@
       <screen x="1680" y="-66" width="2560" height="1351" />
     </state>
     <state x="2847" y="493" width="341" height="249" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592682938517" />
-    <state x="2787" y="380" width="1081" height="682" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1592685279590">
-      <screen x="1680" y="-66" width="2560" height="1351" />
+    <state x="2787" y="379" width="1081" height="682" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1592919499084">
+      <screen x="1680" y="-66" width="2560" height="1347" />
     </state>
     <state x="726" y="342" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1680.965@0.23.1680.965" timestamp="1592644484160" />
+    <state x="2787" y="379" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-66.2560.1347/0.23.1680.1027@1680.-66.2560.1347" timestamp="1592919499084" />
     <state x="2787" y="380" width="1081" height="682" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592685279590" />
     <state x="2786" y="384" key="refactoring.ChangeSignatureDialog" timestamp="1592591387624">
       <screen x="1680" y="-66" width="2560" height="1351" />
