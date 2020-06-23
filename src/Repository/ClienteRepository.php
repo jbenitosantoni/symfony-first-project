@@ -8,6 +8,7 @@ use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @method Cliente|null find($id, $lockMode = null, $lockVersion = null)
@@ -41,17 +42,10 @@ class ClienteRepository extends ServiceEntityRepository
         }
     }
 
-    public function nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram) {
-    $em = $this->getEntityManager();
-    $cliente = new Cliente();
-    $cliente->setNombre($nombre);
-    $cliente->setApellidos($apellidos);
-    $cliente->setDireccion($direccion);
-    $cliente->setEmail($email);
-    $cliente->setInstagram($instagram);
-    $cliente->setFechaCreacion(new \DateTime());
+    public function nuevoCliente($form) {
+        $em = $this->getEntityManager();
         try {
-            $em->persist($cliente);
+            $em->persist($form);
         } catch (ORMException $e) {
         }
         try {
@@ -60,16 +54,9 @@ class ClienteRepository extends ServiceEntityRepository
         } catch (ORMException $e) {
         }
     }
-
-    public function validateEmail($email)  {
-        try {
-            return $this->createQueryBuilder('cliente')->select('cliente.Email')->where("cliente.Email = $email")->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-        }
-    }
     public function validateInstagram($instagram) {
         try {
-            return $this->createQueryBuilder('cliente')->select('cliente.Instagram')->where("cliente.Instagram = $instagram")->getQuery()->getOneOrNullResult();
+            return $this->createQueryBuilder('cliente')->select('cliente.Instagram')->where('cliente.Instagram = :instagram')->setParameter('instagram', $instagram)->getQuery()->getOneOrNullResult();
         } catch (NonUniqueResultException $e) {
         }
     }

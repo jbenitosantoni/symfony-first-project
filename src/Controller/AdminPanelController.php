@@ -4,8 +4,10 @@
 namespace App\Controller;
 
 use App\Entity\Cliente;
+use App\Form\NewClientType;
 use App\Repository\ClienteRepository;
 use App\Repository\PedidosRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -74,10 +76,17 @@ class AdminPanelController extends AbstractController
     /**
      * @Route("/admin/pedidos", name="todosPedidos")
      * @param PedidosRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
      * @return Response
      */
-    public function mostrarTodosPedidos(PedidosRepository $repository) {
-        $pedidos = $repository->getAllPedidos();
+    public function mostrarTodosPedidos(PedidosRepository $repository, PaginatorInterface $paginator, Request $request) {
+        $allPedidosQuery = $repository->getAllPedidos();
+        $pedidos = $paginator->paginate(
+            $allPedidosQuery,
+            $request->query->getInt('page', 1),
+            10
+        );
         return $this->render('adminPanel/pedidos.html.twig', [
             'pedidos' => $pedidos
         ]);
@@ -86,10 +95,17 @@ class AdminPanelController extends AbstractController
     /**
      * @Route("/admin/clientes", name="clientes")
      * @param ClienteRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
      * @return Response
      */
-    public function mostrarTodosClientes(ClienteRepository $repository) {
-        $clientes = $repository->getAllClientes();
+    public function mostrarTodosClientes(ClienteRepository $repository, PaginatorInterface $paginator, Request $request) {
+        $allClientesQuery = $repository->getAllClientes();
+        $clientes = $paginator->paginate(
+            $allClientesQuery,
+            $request->query->getInt('page', 1),
+            10
+        );
         return $this->render('adminPanel/clientes.html.twig', [
             'clientes' => $clientes
         ]);
@@ -109,6 +125,7 @@ class AdminPanelController extends AbstractController
      */
     public function generarPedido(Request $request, PedidosRepository $repositoryPedidos, ClienteRepository $repositoryCliente) {
         if ($request->isMethod('post')) {
+            $submittedToken = $request->request->get('token');
             $articulos = $request->get('articulos');
             $precio = $request->get('precio');
             $idCliente = $request->get('idCliente');
@@ -117,9 +134,11 @@ class AdminPanelController extends AbstractController
             } elseif ($precio == 0){
                 return new Response("El precio no puede ser 0");
             }else {
+                if ($this->isCsrfTokenValid('delete-item', $submittedToken)) {
             $cliente = $repositoryCliente->getCliente($idCliente);
             $repositoryPedidos->generarPedido($articulos, $precio, $cliente);
             return $this->redirect($this->generateUrl('clientes'));
+                }
             }
         } else {
             $url = $this->generateUrl('indexPanelAdmin');
@@ -159,39 +178,24 @@ class AdminPanelController extends AbstractController
                 'cliente' => $cliente
             ]);
     }
+
     /**
-     * @Route("admin/generarCliente", name="formNuevoCliente")
+     * @Route("admin/generarCliente", name="nuevoCliente")
+     * @param Request $request
+     * @param ClienteRepository $repository
+     * @return Response
      */
-    public function formGenerarCliente() {
-        return $this->render('adminPanel/generarCliente.html.twig');
-    }
-    /**
-     * @Route("admin/generarCliente/new", name="nuevoCliente")
-     */
-    public function generarCliente(Request $request, ClienteRepository $repository) {
-        if ($request->isMethod('post')) {
-            $nombre = $request->get('nombre');
-            $apellidos = $request->get('apellidos');
-            $direccion = $request->get('direccion');
-            $email = $request->get('email');
-            $instagram = $request->get('instagram');
-            if (!preg_match('/^@.*$/', $instagram)) {
-                $url = $this->generateUrl('formNuevoCliente');
-                Return new Response('El instagram debe empezar con @ para volver a crear el usuario click <a href="$url">aqui</a>');
-            } elseif (!preg_match('/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/', $email)){
-                Return new Response('El formato del email es incorrecto para volver a crear el usuario click <a href="$url">aqui</a>');
-            } else {
-                if ($repository->validateEmail($email) != null && $repository->validateInstagram($instagram) != null){
-            $cliente = $repository->nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram);
-            return $this->mostrarTodosClientes($repository);
-                } else {
-                    $url = $this->generateUrl('formNuevoCliente');
-                    return new Response("El email o el instagram ya existen click <a href='$url'>aquí</a> para volver ");
-                }
+    public function generarCliente(Request $request,ClienteRepository $repository) {
+        $form = $this->createForm(NewClientType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $formData = $form->getData();
+            $repository->nuevoCliente($formData);
+            return $this->redirect($this->generateUrl('clientes'));
         }
-    } else {
-            $url = $this->generateUrl('indexPanelAdmin');
-            return new Response("Que haces aqui?? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
-        }
+        return $this->render('adminPanel/newClient.html.twig', [
+            'form' => $form,
+            'form' => $form->createView()
+        ]);
     }
 }
