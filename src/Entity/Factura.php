@@ -4,12 +4,14 @@ namespace App\Entity;
 
 use App\Repository\FacturaRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=FacturaRepository::class)
  */
 class Factura
 {
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -24,6 +26,8 @@ class Factura
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
+     * @Assert\NotBlank()
      */
     private $Fecha;
 
@@ -43,6 +47,15 @@ class Factura
      * @ORM\JoinColumn(nullable=false)
      */
     private $IdCliente;
+
+    /**
+     * Factura constructor.
+     * @param $Fecha
+     */
+    public function __construct($Fecha)
+    {
+        $this->Fecha = new \DateTime();
+    }
 
     public function getId(): ?int
     {

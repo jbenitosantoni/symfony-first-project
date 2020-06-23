@@ -12,19 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/validator.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/validator.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/dispenseeds/cliente.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/dispenseeds/cliente.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/mysql.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Cliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cliente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/generarCliente.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Factura.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Factura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pedidos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminPanel/clientes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/clientes.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminPanel/newClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/newClient.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,6 +220,10 @@
       <screen x="1680" y="-66" width="2560" height="1351" />
     </state>
     <state x="2697" y="275" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592585884176" />
+    <state x="2747" y="331" key="#com.intellij.ide.util.MemberChooser" timestamp="1592936226797">
+      <screen x="1680" y="-66" width="2560" height="1347" />
+    </state>
+    <state x="2747" y="331" key="#com.intellij.ide.util.MemberChooser/1680.-66.2560.1347/0.23.1680.1027@1680.-66.2560.1347" timestamp="1592936226797" />
     <state x="702" y="335" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592648893208">
       <screen x="0" y="23" width="1680" height="965" />
     </state>
