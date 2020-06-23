@@ -149,21 +149,15 @@ class AdminPanelController extends AbstractController
      * @return Response
      */
     public function buscarInstagram(Request $request, ClienteRepository $repository) {
-        if ($request->isMethod('post')) {
-            $ig = $request->get('instagram');
-            $cliente = $repository->buscarPorInstagram($ig);
+        $instagram = dump($request->query->get('instagram'));
+            $cliente = $repository->buscarPorInstagram($instagram);
             if ($cliente == null) {
                 $url = $this->generateUrl('indexPanelAdmin');
-                return new Response("El cliente con Instagram $ig no existe, ¿has puesto la @? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
+                return new Response("El cliente con Instagram $instagram no existe, ¿has puesto la @? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
             }
             return $this->render('adminPanel/cliente.html.twig', [
                 'cliente' => $cliente
             ]);
-        }
-        else {
-            $url = $this->generateUrl('indexPanelAdmin');
-            return new Response("Que haces aqui?? UTILIZA LA BARRA DE NAVEGACION PARA BUSCAR <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
-            }
     }
     /**
      * @Route("admin/generarCliente", name="formNuevoCliente")
@@ -187,8 +181,13 @@ class AdminPanelController extends AbstractController
             } elseif (!preg_match('/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/', $email)){
                 Return new Response('El formato del email es incorrecto para volver a crear el usuario click <a href="$url">aqui</a>');
             } else {
+                if ($repository->validateEmail($email) != null && $repository->validateInstagram($instagram) != null){
             $cliente = $repository->nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram);
             return $this->mostrarTodosClientes($repository);
+                } else {
+                    $url = $this->generateUrl('formNuevoCliente');
+                    return new Response("El email o el instagram ya existen click <a href='$url'>aquí</a> para volver ");
+                }
         }
     } else {
             $url = $this->generateUrl('indexPanelAdmin');

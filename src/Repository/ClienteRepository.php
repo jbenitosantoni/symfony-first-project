@@ -60,6 +60,19 @@ class ClienteRepository extends ServiceEntityRepository
         } catch (ORMException $e) {
         }
     }
+
+    public function validateEmail($email)  {
+        try {
+            return $this->createQueryBuilder('cliente')->select('cliente.Email')->where("cliente.Email = $email")->getQuery()->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+        }
+    }
+    public function validateInstagram($instagram) {
+        try {
+            return $this->createQueryBuilder('cliente')->select('cliente.Instagram')->where("cliente.Instagram = $instagram")->getQuery()->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+        }
+    }
     // /**
     //  * @return Cliente[] Returns an array of Cliente objects
     //  */
