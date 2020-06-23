@@ -11,30 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_1.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_1.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_10.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_10.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_2.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_2.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_3.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_3.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_4.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_4.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_5.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_5.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_6.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_6.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_7.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_8.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#innodb_temp/temp_9.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/binlog.000007" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/binlog.000007" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/binlog.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_buffer_pool" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db-data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ibtmp1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/mysql.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db-data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +184,7 @@
       <workItem from="1592857123700" duration="599000" />
       <workItem from="1592858277746" duration="423000" />
       <workItem from="1592897359106" duration="192000" />
-      <workItem from="1592902609550" duration="558000" />
+      <workItem from="1592902609550" duration="2245000" />
     </task>
     <servers />
   </component>

@@ -181,8 +181,13 @@ class AdminPanelController extends AbstractController
             } elseif (!preg_match('/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/', $email)){
                 Return new Response('El formato del email es incorrecto para volver a crear el usuario click <a href="$url">aqui</a>');
             } else {
+                if ($repository->validateEmail($email) != null && $repository->validateInstagram($instagram) != null){
             $cliente = $repository->nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram);
             return $this->mostrarTodosClientes($repository);
+                } else {
+                    $url = $this->generateUrl('formNuevoCliente');
+                    return new Response("El email o el instagram ya existen click <a href='$url'>aquí</a> para volver ");
+                }
         }
     } else {
             $url = $this->generateUrl('indexPanelAdmin');
