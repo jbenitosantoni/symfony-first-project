@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\Cliente;
 use App\Repository\ClienteRepository;
 use App\Repository\PedidosRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -74,10 +75,17 @@ class AdminPanelController extends AbstractController
     /**
      * @Route("/admin/pedidos", name="todosPedidos")
      * @param PedidosRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
      * @return Response
      */
-    public function mostrarTodosPedidos(PedidosRepository $repository) {
-        $pedidos = $repository->getAllPedidos();
+    public function mostrarTodosPedidos(PedidosRepository $repository, PaginatorInterface $paginator, Request $request) {
+        $allPedidosQuery = $repository->getAllPedidos();
+        $pedidos = $paginator->paginate(
+            $allPedidosQuery,
+            $request->query->getInt('page', 1),
+            10
+        );
         return $this->render('adminPanel/pedidos.html.twig', [
             'pedidos' => $pedidos
         ]);
@@ -86,10 +94,17 @@ class AdminPanelController extends AbstractController
     /**
      * @Route("/admin/clientes", name="clientes")
      * @param ClienteRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
      * @return Response
      */
-    public function mostrarTodosClientes(ClienteRepository $repository) {
-        $clientes = $repository->getAllClientes();
+    public function mostrarTodosClientes(ClienteRepository $repository, PaginatorInterface $paginator, Request $request) {
+        $allClientesQuery = $repository->getAllClientes();
+        $clientes = $paginator->paginate(
+            $allClientesQuery,
+            $request->query->getInt('page', 1),
+            10
+        );
         return $this->render('adminPanel/clientes.html.twig', [
             'clientes' => $clientes
         ]);
@@ -188,7 +203,7 @@ class AdminPanelController extends AbstractController
                 } else {
                     if ($repository->validateEmail($email) == null && $repository->validateInstagram($instagram) == null){
                         $repository->nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram);
-                        return $this->mostrarTodosClientes($repository);
+                        return $this->redirect($this->generateUrl('clientes'));
                     } else {
                         $url = $this->generateUrl('formNuevoCliente');
                         return new Response("El email o el instagram ya existen click <a href='$url'>aquí</a> para volver ");

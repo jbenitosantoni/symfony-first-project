@@ -36,6 +36,11 @@
         </tr>
     {% endfor %}
 {% endblock %}
+{% block paginator %}
+    <div class="navigation float-right mr-4">
+        {{ knp_pagination_render(pedidos) }}
+    </div>
+{% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
