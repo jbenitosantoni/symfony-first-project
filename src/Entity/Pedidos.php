@@ -7,13 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
  * @ORM\Entity(repositoryClass=PedidosRepository::class)
  * @UniqueEntity(fields="Tracking", message="Introduce un Tracking que no haya sido usado antes")
  */
 class Pedidos
 {
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -86,6 +86,16 @@ class Pedidos
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $FechaDevuelto;
+
+    /**
+     * Pedidos constructor.
+     * @param $FechaCreacion
+     * @Assert\Type("\DateTimeInterface")
+     */
+    public function __construct($FechaCreacion)
+    {
+        $this->FechaCreacion = new \DateTime();
+    }
 
     public function getId(): ?int
     {
