@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Validator as ClienteAssert;
 
 /**
  * @ORM\Entity(repositoryClass=ClienteRepository::class)
@@ -50,11 +51,13 @@ class Cliente
     /**
      * @ORM\Column(type="string", length=70, unique=true)
      * @Assert\NotBlank(message="This value cannot be empty!")
+     * @ClienteAssert\Instagram
      */
     private $Instagram;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\Type("\DateTimeInterface")
      */
     private $FechaCreacion;
 
@@ -68,15 +71,11 @@ class Cliente
      */
     private $facturas;
 
-    /**
-     * @ORM\Column(type="array", nullable=true)
-     */
-    private $pedidosId = [];
-
     public function __construct()
     {
         $this->pedidos = new ArrayCollection();
         $this->facturas = new ArrayCollection();
+        $this->FechaCreacion = new \DateTime();
     }
 
     public function getId(): ?int
@@ -214,18 +213,6 @@ class Cliente
                 $factura->setIdCliente(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getPedidosId(): ?array
-    {
-        return $this->pedidosId;
-    }
-
-    public function setPedidosId(?array $pedidosId): self
-    {
-        $this->pedidosId = $pedidosId;
 
         return $this;
     }

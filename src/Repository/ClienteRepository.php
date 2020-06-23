@@ -42,30 +42,16 @@ class ClienteRepository extends ServiceEntityRepository
         }
     }
 
-    public function nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram) {
-    $em = $this->getEntityManager();
-    $cliente = new Cliente();
-    $cliente->setNombre($nombre);
-    $cliente->setApellidos($apellidos);
-    $cliente->setDireccion($direccion);
-    $cliente->setEmail($email);
-    $cliente->setInstagram($instagram);
-    $cliente->setFechaCreacion(new \DateTime());
+    public function nuevoCliente($form) {
+        $em = $this->getEntityManager();
         try {
-            $em->persist($cliente);
+            $em->persist($form);
         } catch (ORMException $e) {
         }
         try {
             $em->flush();
         } catch (OptimisticLockException $e) {
         } catch (ORMException $e) {
-        }
-    }
-
-    public function validateEmail($email)  {
-        try {
-            return $this->createQueryBuilder('cliente')->select('cliente.Email')->where("cliente.Email = :email")->setParameter('email', $email)->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
         }
     }
     public function validateInstagram($instagram) {

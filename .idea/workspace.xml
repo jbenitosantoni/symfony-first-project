@@ -11,17 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/GestionPedidosDispenseeds.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GestionPedidosDispenseeds.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/validator.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/validator.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/dispenseeds/cliente.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/dispenseeds/cliente.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/mysql.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/clientes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/clientes.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/pedidos.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/pedidos.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Cliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cliente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ClienteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminPanel/generarCliente.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,10 +286,11 @@
       <screen x="1680" y="-66" width="2560" height="1351" />
     </state>
     <state x="2786" y="384" key="refactoring.ChangeSignatureDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592591387624" />
-    <state x="2450" y="231" width="1021" height="947" key="search.everywhere.popup" timestamp="1592677257022">
-      <screen x="1680" y="-66" width="2560" height="1351" />
+    <state x="2450" y="230" width="1021" height="945" key="search.everywhere.popup" timestamp="1592933588218">
+      <screen x="1680" y="-66" width="2560" height="1347" />
     </state>
     <state x="505" y="235" width="670" height="676" key="search.everywhere.popup/0.23.1680.965@0.23.1680.965" timestamp="1592666463804" />
+    <state x="2450" y="230" width="1021" height="945" key="search.everywhere.popup/1680.-66.2560.1347/0.23.1680.1027@1680.-66.2560.1347" timestamp="1592933588218" />
     <state x="2450" y="231" width="1021" height="947" key="search.everywhere.popup/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592677257022" />
   </component>
 </project>

@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Entity\Cliente;
+use App\Form\NewClientType;
 use App\Repository\ClienteRepository;
 use App\Repository\PedidosRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -177,42 +178,24 @@ class AdminPanelController extends AbstractController
                 'cliente' => $cliente
             ]);
     }
+
     /**
-     * @Route("admin/generarCliente", name="formNuevoCliente")
+     * @Route("admin/generarCliente", name="nuevoCliente")
+     * @param Request $request
+     * @param ClienteRepository $repository
+     * @return Response
      */
-    public function formGenerarCliente() {
-        return $this->render('adminPanel/generarCliente.html.twig');
-    }
-    /**
-     * @Route("admin/generarCliente/new", name="nuevoCliente")
-     */
-    public function generarCliente(Request $request, ClienteRepository $repository) {
-        if ($request->isMethod('post')) {
-            $submittedToken = $request->request->get('token');
-            $nombre = $request->get('nombre');
-            $apellidos = $request->get('apellidos');
-            $direccion = $request->get('direccion');
-            $email = $request->get('email');
-            $instagram = $request->get('instagram');
-            if ($this->isCsrfTokenValid('delete-item', $submittedToken)) {
-                if (!preg_match('/^@.*$/', $instagram)) {
-                    $url = $this->generateUrl('formNuevoCliente');
-                    Return new Response('El instagram debe empezar con @ para volver a crear el usuario click <a href="$url">aqui</a>');
-                } elseif (!preg_match('/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/', $email)){
-                    Return new Response('El formato del email es incorrecto para volver a crear el usuario click <a href="$url">aqui</a>');
-                } else {
-                    if ($repository->validateEmail($email) == null && $repository->validateInstagram($instagram) == null){
-                        $repository->nuevoCliente($nombre, $apellidos, $direccion, $email, $instagram);
-                        return $this->redirect($this->generateUrl('clientes'));
-                    } else {
-                        $url = $this->generateUrl('formNuevoCliente');
-                        return new Response("El email o el instagram ya existen click <a href='$url'>aquí</a> para volver ");
-                    }
-                }
-            } else {
-                $url = $this->generateUrl('indexPanelAdmin');
-                return new Response("Que haces aqui?? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
-            }
+    public function generarCliente(Request $request,ClienteRepository $repository) {
+        $form = $this->createForm(NewClientType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $formData = $form->getData();
+            $repository->nuevoCliente($formData);
+            return $this->redirect($this->generateUrl('clientes'));
         }
+        return $this->render('adminPanel/newClient.html.twig', [
+            'form' => $form,
+            'form' => $form->createView()
+        ]);
     }
 }
