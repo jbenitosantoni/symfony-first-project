@@ -57,16 +57,13 @@ class AdminPanelController extends AbstractController
             $recibido = $request->get('recibido');
             $devuelto = $request->get('devuelto');
             $id = $request->get('id');
+            $trackings = $repository->uniqueTracking($tracking);
+            if (count($trackings) == 0 || (count($trackings) == 1 && $trackings[0]['id'] == $id)) {
             $repository->modifyPedido($tracking, $enviado, $recibido, $devuelto, $id);
-
-            $pedido = $repository->getPedido($id);
-            $pedido['FechaCreacion'] = $pedido['FechaCreacion']->format('Y-m-d H:i:s');
-            if ($pedido['FechaRecibido'] != null) {
-                $pedido['FechaRecibido'] = $pedido['FechaRecibido']->format('Y-m-d H:i:s');
+            return $this->redirect("/admin/pedido/$id");
+        } else {
+            return new Response("El tracking ya existe");
             }
-            return $this->render('adminPanel/pedido.html.twig', [
-                'pedido' => $pedido
-            ]);
         } else {
             $url = $this->generateUrl('indexPanelAdmin');
             return new Response("Que haces aqui?? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");

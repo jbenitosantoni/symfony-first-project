@@ -116,6 +116,10 @@ class PedidosRepository extends ServiceEntityRepository
     public function getPedidosCliente($idCliente) {
         return $this->createQueryBuilder('pedidos')->select('pedidos.id', 'pedidos.FechaCreacion', 'pedidos.PrecioFinal', 'pedidos.Enviado', 'pedidos.Devuelto', 'c.Nombre', 'c.Apellidos', 'c.Instagram', 'c.Email', 'factura.Pagado', 'factura.FechaPago')->innerJoin('pedidos.IdCliente', 'c')->innerJoin('pedidos.factura', 'factura')->orderBy('pedidos.id')->where("c.id = $idCliente")->getQuery()->getResult();
     }
+
+    public function uniqueTracking($tracking) {
+            return $this->createQueryBuilder('pedidos')->select('pedidos.Tracking', 'pedidos.id')->where("pedidos.Tracking = :tracking")->setParameter('tracking', $tracking)->getQuery()->getResult();
+    }
     // /**
     //  * @return Pedidos[] Returns an array of Pedidos objects
     //  */
