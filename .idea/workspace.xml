@@ -10,13 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Factura.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Factura.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/clientes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/clientes.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/newClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/newClient.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
