@@ -12,9 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/NewOrderType.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,6 +280,14 @@
     <state x="726" y="342" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1680.965@0.23.1680.965" timestamp="1592644484160" />
     <state x="2787" y="379" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-66.2560.1347/0.23.1680.1027@1680.-66.2560.1347" timestamp="1592919499084" />
     <state x="2787" y="380" width="1081" height="682" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592685279590" />
+    <state x="1982" y="135" width="1665" height="1007" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593170336835">
+      <screen x="1680" y="-66" width="2560" height="1351" />
+    </state>
+    <state x="1982" y="135" width="1665" height="1007" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1593170336835" />
+    <state x="2193" y="62" width="1665" height="1007" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1593170336836">
+      <screen x="1680" y="-66" width="2560" height="1351" />
+    </state>
+    <state x="2193" y="62" width="1665" height="1007" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1593170336836" />
     <state x="2786" y="384" key="refactoring.ChangeSignatureDialog" timestamp="1592591387624">
       <screen x="1680" y="-66" width="2560" height="1351" />
     </state>
