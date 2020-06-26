@@ -14,14 +14,6 @@ class NewOrderType extends AbstractType
         $builder
             ->add('PrecioFinal')
             ->add('Articulos')
-            ->add('Enviado')
-            ->add('Tracking')
-            ->add('Devuelto')
-            ->add('Recibido')
-            ->add('FechaCreacion')
-            ->add('FechaRecibido')
-            ->add('IdCliente')
-            ->add('factura')
         ;
     }
 

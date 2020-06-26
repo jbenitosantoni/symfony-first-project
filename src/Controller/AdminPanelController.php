@@ -4,7 +4,9 @@
 namespace App\Controller;
 
 use App\Entity\Cliente;
+use App\Entity\Pedidos;
 use App\Form\NewClientType;
+use App\Form\NewOrderType;
 use App\Repository\ClienteRepository;
 use App\Repository\PedidosRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -113,9 +115,19 @@ class AdminPanelController extends AbstractController
      * @param $id
      * @return Response
      */
-    public function forumGenerarPedido($id) {
-        return $this->render('adminPanel/generarPedido.html.twig', [
-            'idCliente' => $id]);
+    public function forumGenerarPedido($id, ClienteRepository $repositoryCliente, PedidosRepository $repository, Request $request) {
+        $datosCliente = $repositoryCliente->getCliente($id);
+        $form = $this->createForm(NewOrderType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $formData = $form->getData();
+            $repository->generarPedido($formData);
+            return $this->redirect($this->generateUrl('clientes'));
+        }
+        return $this->render('adminPanel/newClient.html.twig', [
+            'form' => $form,
+            'form' => $form->createView()
+        ]);
     }
     /**
      * @Route("/admin/generarPedido/new", name="generarPedido")

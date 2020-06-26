@@ -89,10 +89,9 @@ class Pedidos
 
     /**
      * Pedidos constructor.
-     * @param $FechaCreacion
      * @Assert\Type("\DateTimeInterface")
      */
-    public function __construct($FechaCreacion)
+    public function __construct()
     {
         $this->FechaCreacion = new \DateTime();
     }
