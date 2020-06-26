@@ -88,11 +88,10 @@ class Pedidos
     private $FechaDevuelto;
 
     /**
-     * Pedidos constructor.
-     * @param $FechaCreacion
+     * Pedidos constructor
      * @Assert\Type("\DateTimeInterface")
      */
-    public function __construct($FechaCreacion)
+    public function __construct()
     {
         $this->FechaCreacion = new \DateTime();
     }

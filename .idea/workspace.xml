@@ -12,10 +12,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Factura.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Factura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/clientes.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/clientes.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/adminPanel/newClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/adminPanel/newClient.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/NewOrderType.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,6 +192,9 @@
       <workItem from="1592897359106" duration="192000" />
       <workItem from="1592902609550" duration="2803000" />
       <workItem from="1592918340630" duration="2634000" />
+      <workItem from="1593158389826" duration="102000" />
+      <workItem from="1593165702978" duration="8000" />
+      <workItem from="1593167467234" duration="1587000" />
     </task>
     <servers />
   </component>
@@ -224,6 +226,10 @@
       <screen x="1680" y="-66" width="2560" height="1347" />
     </state>
     <state x="2747" y="331" key="#com.intellij.ide.util.MemberChooser/1680.-66.2560.1347/0.23.1680.1027@1680.-66.2560.1347" timestamp="1592936226797" />
+    <state x="2739" y="434" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593116503638">
+      <screen x="1680" y="-66" width="2560" height="1351" />
+    </state>
+    <state x="2739" y="434" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1593116503638" />
     <state x="702" y="335" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592648893208">
       <screen x="0" y="23" width="1680" height="965" />
     </state>
