@@ -88,7 +88,7 @@ class Pedidos
     private $FechaDevuelto;
 
     /**
-     * Pedidos constructor.
+     * Pedidos constructor
      * @Assert\Type("\DateTimeInterface")
      */
     public function __construct()
