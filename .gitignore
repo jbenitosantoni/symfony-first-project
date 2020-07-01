@@ -15,4 +15,5 @@
 ###< symfony/phpunit-bridge ###
 
 /db-data/
+/.idea/
 
