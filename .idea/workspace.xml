@@ -11,10 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dae52e2-c40c-4882-b4a2-ed3dbc6f5294" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/adminPanel/newOrder.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/#ib_16384_0.dblwr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/binlog.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/mysql.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db-data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/db-data/undo_002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Pedidos.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pedidos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/NewOrderType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/NewOrderType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/NewOrderType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PedidosRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PedidosRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/adminPanel/generarPedido.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +44,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -195,6 +207,8 @@
       <workItem from="1593158389826" duration="102000" />
       <workItem from="1593165702978" duration="8000" />
       <workItem from="1593167467234" duration="1587000" />
+      <workItem from="1593376431323" duration="6000" />
+      <workItem from="1594143960364" duration="1553000" />
     </task>
     <servers />
   </component>
@@ -218,9 +232,10 @@
       <screen x="1680" y="-66" width="2560" height="1351" />
     </state>
     <state x="2309" y="440" key="#SQL_Dialects/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592590224876" />
-    <state x="2697" y="275" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592585884176">
-      <screen x="1680" y="-66" width="2560" height="1351" />
+    <state x="667" y="266" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594144535427">
+      <screen x="0" y="23" width="1680" height="963" />
     </state>
+    <state x="667" y="266" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.963@0.23.1680.963" timestamp="1594144535427" />
     <state x="2697" y="275" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592585884176" />
     <state x="2747" y="331" key="#com.intellij.ide.util.MemberChooser" timestamp="1592936226797">
       <screen x="1680" y="-66" width="2560" height="1347" />
@@ -283,9 +298,10 @@
     <state x="726" y="342" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1680.965@0.23.1680.965" timestamp="1592644484160" />
     <state x="2787" y="379" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-66.2560.1347/0.23.1680.1027@1680.-66.2560.1347" timestamp="1592919499084" />
     <state x="2787" y="380" width="1081" height="682" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592685279590" />
-    <state x="2786" y="384" key="refactoring.ChangeSignatureDialog" timestamp="1592591387624">
-      <screen x="1680" y="-66" width="2560" height="1351" />
+    <state x="726" y="344" key="refactoring.ChangeSignatureDialog" timestamp="1594144667717">
+      <screen x="0" y="23" width="1680" height="963" />
     </state>
+    <state x="726" y="344" key="refactoring.ChangeSignatureDialog/0.23.1680.963@0.23.1680.963" timestamp="1594144667717" />
     <state x="2786" y="384" key="refactoring.ChangeSignatureDialog/1680.-66.2560.1351/0.23.1680.1027@1680.-66.2560.1351" timestamp="1592591387624" />
     <state x="2450" y="230" width="1021" height="945" key="search.everywhere.popup" timestamp="1592933588218">
       <screen x="1680" y="-66" width="2560" height="1347" />

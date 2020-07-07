@@ -4,6 +4,10 @@ namespace App\Form;
 
 use App\Entity\Pedidos;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,9 +16,10 @@ class NewOrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('PrecioFinal')
-            ->add('Articulos')
-        ;
+            ->add('Articulos', TextareaType::class, ['required' => true])
+            ->add('PrecioFinal', MoneyType::class, [
+                'divisor' => 100,]
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver)

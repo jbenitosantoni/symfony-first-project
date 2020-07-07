@@ -77,40 +77,16 @@ class PedidosRepository extends ServiceEntityRepository
         return $pedidos;
     }
 
-    public function generarPedido($articulos, $precio, $cliente) {
-
+    public function generarPedido($formData, $idCliente) {
             $em = $this->getEntityManager();
             $pedido = new Pedidos();
-            $pedido->setPrecioFinal($precio);
-            $pedido->setArticulos($articulos);
+            $pedido->setPrecioFinal($formData->PrecioFinal);
+            $pedido->setArticulos($formData->Articulos);
             $pedido->setEnviado(0);
             $pedido->setDevuelto(0);
             $pedido->setRecibido(0);
             $pedido->setFechaCreacion(new \DateTime());
-            $pedido->setIdCliente($cliente);
-            try {
-                $em->persist($pedido);
-            } catch (ORMException $e) {
-            }
-            try {
-                $em->flush();
-            } catch (OptimisticLockException $e) {
-            } catch (ORMException $e) {
-            }
-            $factura = new Factura();
-            $factura->setIdCliente($cliente);
-            $factura->setPagado(0);
-            $factura->setFecha(new \DateTime());
-            $factura->setIdPedido($pedido);
-            try {
-                $em->persist($factura);
-            } catch (ORMException $e) {
-            }
-            try {
-                $em->flush();
-            } catch (OptimisticLockException $e) {
-            } catch (ORMException $e) {
-            }
+            $pedido->setIdCliente($idCliente);
     }
 
     public function getPedidosCliente($idCliente) {

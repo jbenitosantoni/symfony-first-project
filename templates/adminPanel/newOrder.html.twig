@@ -1,0 +1,20 @@
+{% extends'adminPanel/base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="../css/dashboard.css">
+{% endblock %}
+{% block h2Title %}
+    Nuevo Pedido
+{% endblock %}
+{% block activeInicio %}active{% endblock %}
+{% block single %}
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Send" class="btn btn-primary" />
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="../js/dashboard.js"></script>
+{% endblock %}

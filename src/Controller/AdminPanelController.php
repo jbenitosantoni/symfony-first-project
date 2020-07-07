@@ -115,44 +115,19 @@ class AdminPanelController extends AbstractController
      * @param $id
      * @return Response
      */
-    public function forumGenerarPedido($id, ClienteRepository $repositoryCliente, PedidosRepository $repository, Request $request) {
+    public function formGenerarPedido($id, ClienteRepository $repositoryCliente, PedidosRepository $repository, Request $request) {
         $datosCliente = $repositoryCliente->getCliente($id);
         $form = $this->createForm(NewOrderType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $formData = $form->getData();
-            $repository->generarPedido($formData);
+            $repository->generarPedido($formData, $id);
             return $this->redirect($this->generateUrl('clientes'));
         }
-        return $this->render('adminPanel/newClient.html.twig', [
+        return $this->render('adminPanel/newOrder.html.twig', [
             'form' => $form,
             'form' => $form->createView()
         ]);
-    }
-    /**
-     * @Route("/admin/generarPedido/new", name="generarPedido")
-     */
-    public function generarPedido(Request $request, PedidosRepository $repositoryPedidos, ClienteRepository $repositoryCliente) {
-        if ($request->isMethod('post')) {
-            $submittedToken = $request->request->get('token');
-            $articulos = $request->get('articulos');
-            $precio = $request->get('precio');
-            $idCliente = $request->get('idCliente');
-            if(!preg_match("/^\d{0,8}(\.\d{1,4})?$/",$precio)) {
-                return new Response("El precio debe ser del formato xx.xx, solo puede tener dos decimales");
-            } elseif ($precio == 0){
-                return new Response("El precio no puede ser 0");
-            }else {
-                if ($this->isCsrfTokenValid('delete-item', $submittedToken)) {
-            $cliente = $repositoryCliente->getCliente($idCliente);
-            $repositoryPedidos->generarPedido($articulos, $precio, $cliente);
-            return $this->redirect($this->generateUrl('clientes'));
-                }
-            }
-        } else {
-            $url = $this->generateUrl('indexPanelAdmin');
-            return new Response("Que haces aqui?? <br> Vuelve al panel <a href='$url'>Cick Aqui</a>");
-        }
     }
     /**
      * @Route("admin/pedidos/cliente/{id}", name="pedidosCliente")
